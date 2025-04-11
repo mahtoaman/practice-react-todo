@@ -6,19 +6,32 @@ export default function TodoItem({ todo, todos, setTodos }) {
     setTodos(updatedList);
   }
 
-  // function handleComplete(task) {
-  //   const newList = todos.map((item) =>
-  //     item.date === task.date ? { ...todos, done: !item.done } : todo
-  //   );
-  //   setTodos(newList);
-  // }
+  function handleComplete(task) {
+    console.log(task);
 
-  // let isCompleted = todo.done ? styles.taskCompleted : "";
+    const newList = todos.map(
+      (item) =>
+        item.date === task.date
+          ? { ...item, done: !item.done } // toggle done
+          : item // keep as is
+    );
+
+    console.log(newList);
+    setTodos(newList);
+  }
+  let isCompleted = todo.done ? styles.taskCompleted : "";
 
   return (
     <div className={styles.item}>
       <div className={styles.todoName}>
-        <span>{todo.name}</span>
+        <span
+          className={isCompleted}
+          onClick={() => {
+            handleComplete(todo);
+          }}
+        >
+          {todo.name}
+        </span>
         <span>
           <button
             onClick={() => handleDelete(todo.date)}
