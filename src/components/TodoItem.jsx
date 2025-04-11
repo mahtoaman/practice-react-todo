@@ -7,11 +7,8 @@ export default function TodoItem({ todo, todos, setTodos }) {
   }
 
   function handleComplete(task) {
-    const newList = todos.map(
-      (item) =>
-        item.date === task.date
-          ? { ...item, done: !item.done } 
-          : item 
+    const newList = todos.map((item) =>
+      item.date === task.date ? { ...item, done: !item.done } : item
     );
 
     setTodos(newList);
