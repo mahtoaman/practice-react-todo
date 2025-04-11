@@ -1,0 +1,21 @@
+.item{
+ 
+    font-size: 2rem;
+
+}
+
+.line{
+    border:1px solid #f4f4f4;
+}
+
+.deleteButton{
+    float: right;
+    padding: 12px 20px;
+    border: none;
+    background-color: red;
+    border-radius: 4px;
+}
+
+.taskCompleted{
+    text-decoration: line-through;
+}
